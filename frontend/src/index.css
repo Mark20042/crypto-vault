@@ -1,1 +1,30 @@
 @import "tailwindcss";
+
+@theme {
+  --color-crypto-dark: #0f172a;
+  --color-crypto-primary: #3b82f6;
+  --color-crypto-secondary: #8b5cf6;
+  --color-crypto-accent: #10b981;
+  
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-crypto-dark text-slate-200 font-sans antialiased overflow-x-hidden;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+  }
+  
+  .glass-header {
+    @apply bg-crypto-dark/70 backdrop-blur-lg border-b border-white/10;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-crypto-primary via-crypto-secondary to-crypto-accent;
+  }
+}

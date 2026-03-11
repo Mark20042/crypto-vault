@@ -1,8 +1,7 @@
-from fastapi import APIRouter, HTTPException, status,Response
-from models.users import User, UserCreate , UserLogin
+from fastapi import APIRouter, HTTPException, status, Response
+from models.users import User, UserCreate, UserLogin
 from .passwords import hash_password, verify_password, check_password_strength
 from .generateToken import create_access_token
-from fastapi.security import OAuth2PasswordRequestForm
 
 
 
@@ -29,7 +28,7 @@ async def register_user(user_data: UserCreate):
     if not password_strength["is_strong"]:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=password_strength["message"]
+            detail=password_strength
         )
         
     
@@ -81,4 +80,17 @@ async def login_user(credentials: UserLogin, response: Response):
         max_age=1800   
     )
 
-    return {"message": "Successfully logged in!"}
+    return {
+        "message": "Successfully logged in!",
+        "user": {
+            "id": str(user.id),
+            "name": user.name,
+            "email": user.email
+        }
+    }
+
+# logout
+@router.post("/logout")
+async def logout_user(response: Response):
+    response.delete_cookie(key="access_token")
+    return {"message": "Successfully logged out!"}

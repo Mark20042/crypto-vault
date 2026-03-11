@@ -12,6 +12,7 @@ from beanie import init_beanie
 from config.database import db, ping_db
 from models.users import User 
 from routers.Auth import auth_router
+from routers.Users import users_router
 
 # init 
 limiter = Limiter(key_func=get_remote_address)
@@ -54,7 +55,8 @@ app.add_middleware(
 )
 
 # routers
-app.include_router(auth_router)
+app.include_router(auth_router, prefix="/api")
+app.include_router(users_router, prefix="/api")
 
 # routers
 @app.get("/")

@@ -12,24 +12,20 @@ def check_password_strength(password: str) -> dict:
     if score >= 3:
         return {
             "is_strong": True, 
-            "message": f"Strong enough password. Score: {score}"
+            "score": score,
+            "message": "Strong enough password."
         }
-    
     
     feedback = result.get('feedback', {})
     warning = feedback.get('warning', '')
     suggestions = feedback.get('suggestions', [])
-    
-  
-    response = f"Weak password. Score: {score}"
-    if warning:
-        response += f" | Warning: {warning}"
-    if suggestions:
-        response += f" | Suggestions: {', '.join(suggestions)}"
         
     return {
-        "is_strong": False, 
-        "message": response
+        "is_strong": False,
+        "score": score,
+        "warning": warning,
+        "suggestions": suggestions,
+        "message": f"Weak password (score: {score}/4)"
     }
 
 def hash_password(password: str) -> str:

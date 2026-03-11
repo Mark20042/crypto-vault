@@ -3,7 +3,6 @@ from typing import Optional
 from beanie import Document
 
 class User(Document):
-    id: int
     name: str
     email: str
     password: str
