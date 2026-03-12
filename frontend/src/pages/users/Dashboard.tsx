@@ -34,13 +34,13 @@ export default function Dashboard() {
 
     return (
         <div className="min-h-screen bg-crypto-dark relative overflow-hidden selection:bg-crypto-primary/30 selection:text-white">
-            {/* Background gradients */}
+          
             <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
                 <div className="absolute top-[-5%] -right-[10%] w-[40%] h-[40%] bg-crypto-primary/10 rounded-full mix-blend-screen filter blur-[120px] opacity-60"></div>
                 <div className="absolute bottom-[-5%] -left-[10%] w-[40%] h-[40%] bg-crypto-secondary/10 rounded-full mix-blend-screen filter blur-[120px] opacity-60"></div>
             </div>
 
-            {/* Header */}
+          
             <header className="glass-header sticky top-0 z-50">
                 <div className="container mx-auto px-6 py-4 flex items-center justify-between">
                     <Link to="/" className="flex items-center gap-2 group">
@@ -61,7 +61,7 @@ export default function Dashboard() {
                 </div>
             </header>
 
-            {/* Main Content */}
+          
             <main className="container mx-auto px-6 py-12 relative z-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -76,7 +76,7 @@ export default function Dashboard() {
                         <p className="text-slate-400">Here's a snapshot of your vault status.</p>
                     </div>
 
-                    {/* User Info Card */}
+                 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
@@ -130,7 +130,7 @@ export default function Dashboard() {
                         </motion.div>
                     </div>
 
-                    {/* Quick Stats */}
+                   
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
