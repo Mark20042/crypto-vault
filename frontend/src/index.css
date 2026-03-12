@@ -5,8 +5,8 @@
   --color-crypto-primary: #3b82f6;
   --color-crypto-secondary: #8b5cf6;
   --color-crypto-accent: #10b981;
-  
-  --font-sans: 'Inter', sans-serif;
+
+  --font-sans: "Inter", sans-serif;
 }
 
 @layer base {
@@ -19,12 +19,75 @@
   .glass-panel {
     @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
   }
-  
+
   .glass-header {
     @apply bg-crypto-dark/70 backdrop-blur-lg border-b border-white/10;
   }
-  
+
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-crypto-primary via-crypto-secondary to-crypto-accent;
   }
+}
+
+/* Custom Toast Styles */
+.crypto-toast {
+  background: rgba(15, 23, 42, 0.95) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
+  color: #e2e8f0 !important;
+  font-family: "Inter", sans-serif !important;
+}
+
+.Toastify__toast--success .crypto-toast,
+.Toastify__toast--success.crypto-toast {
+  border-color: rgba(16, 185, 129, 0.5) !important;
+}
+
+.Toastify__toast--error .crypto-toast,
+.Toastify__toast--error.crypto-toast {
+  border-color: rgba(139, 92, 246, 0.5) !important;
+}
+
+.Toastify__toast--warning .crypto-toast,
+.Toastify__toast--warning.crypto-toast {
+  border-color: rgba(251, 191, 36, 0.5) !important;
+}
+
+.Toastify__toast--info .crypto-toast,
+.Toastify__toast--info.crypto-toast {
+  border-color: rgba(59, 130, 246, 0.5) !important;
+}
+
+.crypto-toast-progress {
+  background: linear-gradient(to right, #3b82f6, #8b5cf6, #10b981) !important;
+  height: 3px !important;
+}
+
+.Toastify__close-button {
+  color: #94a3b8 !important;
+  opacity: 0.7 !important;
+}
+
+.Toastify__close-button:hover {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+/* Toast icon colors */
+.Toastify__toast--success svg {
+  fill: #10b981 !important;
+}
+
+.Toastify__toast--error svg {
+  fill: #8b5cf6 !important;
+}
+
+.Toastify__toast--warning svg {
+  fill: #fbbf24 !important;
+}
+
+.Toastify__toast--info svg {
+  fill: #3b82f6 !important;
 }

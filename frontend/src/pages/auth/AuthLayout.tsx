@@ -1,8 +1,7 @@
 import { motion } from "framer-motion";
 import { Link, Outlet } from "react-router-dom";
 import { Wallet, ArrowLeft, Shield, BarChart3, Zap } from "lucide-react";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import Toaster from "../../components/ui/Toaster";
 
 export default function AuthLayout() {
   return (
@@ -125,11 +124,7 @@ export default function AuthLayout() {
         </div>
       </div>
 
-      <ToastContainer
-        position="top-center"
-        theme="dark"
-        toastClassName="glass-panel border-white/10"
-      />
+      <Toaster />
     </div>
   );
 }
