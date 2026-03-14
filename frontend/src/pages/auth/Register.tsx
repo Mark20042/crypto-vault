@@ -40,7 +40,7 @@ export default function Register() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
-    // Clear password feedback when user types
+
     if (e.target.name === "password" || e.target.name === "confirmPassword") {
       setPasswordFeedback(null);
     }
@@ -105,7 +105,7 @@ export default function Register() {
       toast.success("Registration successful! Please login.");
       setTimeout(() => navigate("/auth/login"), 1500);
     } catch (err: any) {
-      // Check if it's a structured password feedback object
+
       if (err && typeof err === "object" && "is_strong" in err) {
         setPasswordFeedback(err as PasswordFeedback);
       } else {
@@ -130,7 +130,6 @@ export default function Register() {
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Name Field */}
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Full Name
@@ -150,7 +149,6 @@ export default function Register() {
           </div>
         </div>
 
-        {/* Email Field */}
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Email Address
@@ -170,7 +168,6 @@ export default function Register() {
           </div>
         </div>
 
-        {/* Password Field */}
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Password
@@ -201,7 +198,6 @@ export default function Register() {
           </div>
         </div>
 
-        {/* Confirm Password Field */}
         <div>
           <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Confirm Password
@@ -221,10 +217,8 @@ export default function Register() {
           </div>
         </div>
 
-        {/* Password Strength Feedback */}
         {passwordFeedback && !passwordFeedback.is_strong && (
           <div className="rounded-xl bg-red-50 border border-red-100 p-4 space-y-3 animate-in fade-in slide-in-from-top-2 shadow-sm">
-            {/* Score Bar */}
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
@@ -251,7 +245,6 @@ export default function Register() {
               </div>
             </div>
 
-            {/* Warning */}
             {passwordFeedback.warning && (
               <div className="flex items-start gap-2.5 bg-amber-50 rounded-lg px-3 py-2.5 border border-amber-100">
                 <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
@@ -261,7 +254,6 @@ export default function Register() {
               </div>
             )}
 
-            {/* Suggestions */}
             {passwordFeedback.suggestions &&
               passwordFeedback.suggestions.length > 0 && (
                 <div className="space-y-2">

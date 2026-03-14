@@ -31,7 +31,6 @@ export default function RightPanel({
     >
       <div className="flex-1 overflow-y-auto custom-scrollbar flex flex-col pt-2">
         
-        {/* Online Friends Section */}
         <div className="px-4 py-3 flex items-center justify-between">
           <h3 className="text-xs font-semibold text-slate-500 uppercase tracking-wider">
             Online — {onlineFriends.length}
@@ -64,7 +63,6 @@ export default function RightPanel({
           )}
         </div>
 
-        {/* Group Chats Section */}
         {groups.length > 0 && (
           <>
             <div className="px-4 py-3 mt-1 border-t border-slate-100/60 flex items-center gap-2">
@@ -101,7 +99,6 @@ export default function RightPanel({
           </>
         )}
 
-        {/* Suggestions Section */}
         {suggestions.length > 0 && (
           <>
             <div className="px-4 py-3 mt-1 border-t border-slate-100/60 flex items-center gap-2">

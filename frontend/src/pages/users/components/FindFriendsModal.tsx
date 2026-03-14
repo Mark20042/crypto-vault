@@ -6,7 +6,6 @@ interface FindFriendsModalProps {
   onClose: () => void;
 }
 
-// Mock available users to add
 const mockUsers = [
   { id: 101, name: "Emma Watson", avatar: "EW", desc: "Available for chat" },
   { id: 102, name: "Frank Castle", avatar: "FC", desc: "Busy" },
@@ -30,7 +29,6 @@ export default function FindFriendsModal({ isOpen, onClose }: FindFriendsModalPr
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-crypto-dark/60 backdrop-blur-sm px-4">
       <div className="w-full max-w-md bg-white rounded-2xl shadow-xl border border-emerald-100 overflow-hidden transform transition-all">
-        {/* Header */}
         <div className="flex items-center justify-between p-5 border-b border-emerald-100 bg-slate-50">
           <h3 className="text-xl font-serif font-semibold text-slate-800">
             Find <span className="text-gradient">Friends</span>
@@ -43,7 +41,6 @@ export default function FindFriendsModal({ isOpen, onClose }: FindFriendsModalPr
           </button>
         </div>
 
-        {/* Body */}
         <div className="p-5 space-y-4">
           <div className="relative">
             <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-emerald-500" />

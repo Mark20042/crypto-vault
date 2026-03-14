@@ -20,7 +20,6 @@ export default function Hero() {
           className="max-w-4xl mx-auto space-y-8"
         >
 
-
           <h1 className="text-5xl md:text-7xl font-serif font-medium tracking-tight text-slate-800 leading-tight">
             <span className="italic">Cozy</span>{" "}
             <span className="font-serif tracking-tight text-gradient">

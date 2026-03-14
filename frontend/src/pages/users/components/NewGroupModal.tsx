@@ -12,7 +12,7 @@ export default function NewGroupModal({ isOpen, onClose }: NewGroupModalProps) {
   if (!isOpen) return null;
 
   const handleCreate = () => {
-    // Basic mock creation
+
     if (groupName.trim()) {
       onClose();
     }
@@ -21,7 +21,6 @@ export default function NewGroupModal({ isOpen, onClose }: NewGroupModalProps) {
   return (
     <div className="fixed inset-0 z-[100] flex items-center justify-center bg-crypto-dark/60 backdrop-blur-sm px-4">
       <div className="w-full max-w-sm bg-white rounded-2xl shadow-xl border border-emerald-100 overflow-hidden transform transition-all">
-        {/* Header */}
         <div className="flex items-center justify-between p-5 border-b border-emerald-100 bg-slate-50">
           <h3 className="text-xl font-serif font-semibold text-slate-800">
             Create <span className="text-gradient">Group</span>
@@ -34,7 +33,6 @@ export default function NewGroupModal({ isOpen, onClose }: NewGroupModalProps) {
           </button>
         </div>
 
-        {/* Body */}
         <div className="p-5 space-y-4">
           <div className="flex justify-center mb-6">
             <div className="w-20 h-20 rounded-full bg-emerald-100 flex items-center justify-center border-2 border-dashed border-emerald-300">

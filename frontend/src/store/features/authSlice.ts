@@ -44,7 +44,7 @@ export const register = createAsyncThunk(
       return response.data.user as User;
     } catch (error: any) {
       const detail = error.response?.data?.detail;
-      // If detail is a structured password feedback object, pass it through
+
       if (detail && typeof detail === "object") {
         return rejectWithValue(detail);
       }
@@ -91,7 +91,7 @@ const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Login
+
       .addCase(login.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -104,7 +104,7 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload as string;
       })
-      // Register
+
       .addCase(register.pending, (state) => {
         state.isLoading = true;
         state.error = null;
@@ -117,11 +117,11 @@ const authSlice = createSlice({
         state.isLoading = false;
         state.error = action.payload as string;
       })
-      // Logout
+
       .addCase(logout.fulfilled, (state) => {
         state.user = null;
       })
-      // Fetch Session
+
       .addCase(fetchSession.pending, (state) => {
         state.isLoading = true;
       })

@@ -11,7 +11,6 @@ import DashboardHeader from "./components/DashboardHeader";
 import FindFriendsModal from "./components/FindFriendsModal";
 import NewGroupModal from "./components/NewGroupModal";
 
-// Mock data — friends
 const mockFriends: Friend[] = [
   { id: 1, name: "Alice Freeman", avatar: "AF", status: "online", lastMessage: "See you tomorrow!", time: "10:30 AM", unread: 2 },
   { id: 2, name: "Bob Smith", avatar: "BS", status: "offline", lastMessage: "Thanks for the design files.", time: "Yesterday", unread: 0 },
@@ -27,7 +26,6 @@ const mockFriends: Friend[] = [
   { id: 12, name: "Leo Martinez", avatar: "LM", status: "offline", lastMessage: "Can you review my PR?", time: "Sun", unread: 0 },
 ];
 
-// Mock group chats
 export const mockGroups: Friend[] = [
   { id: 301, name: "Crypto Builders 🔥", avatar: "CB", status: "online", lastMessage: "Release v2.0 is live!", time: "12:00 PM", unread: 8 },
   { id: 302, name: "Design Team", avatar: "DT", status: "online", lastMessage: "New mockups are ready.", time: "11:30 AM", unread: 0 },
@@ -49,7 +47,6 @@ const mockChatMap: Record<number, Message[]> = {
   ],
 };
 
-// Mock suggestions
 export const mockSuggestions = [
   { id: 201, name: "Olivia Martinez", avatar: "OM" },
   { id: 202, name: "Liam Johnson", avatar: "LJ" },
@@ -65,7 +62,6 @@ export default function Dashboard() {
   const [activeFriend, setActiveFriend] = useState<Friend | null>(null);
   const [messages, setMessages] = useState<Message[]>([]);
 
-  // Modals
   const [isFindFriendsOpen, setIsFindFriendsOpen] = useState(false);
   const [isNewGroupOpen, setIsNewGroupOpen] = useState(false);
 
@@ -118,10 +114,8 @@ export default function Dashboard() {
 
   return (
     <div className="min-h-screen bg-crypto-dark flex flex-col font-sans selection:bg-emerald-200 selection:text-emerald-900">
-      {/* ─── Top Navigation ─── */}
       <DashboardHeader user={currentUser} onLogout={handleLogout} />
 
-      {/* ─── Main Layout ─── */}
       <main className="flex-1 flex overflow-hidden w-full px-4 sm:px-6 py-4 gap-5 relative z-10">
         <Sidebar
           friends={mockFriends}
@@ -131,7 +125,6 @@ export default function Dashboard() {
           onOpenNewGroup={() => setIsNewGroupOpen(true)}
         />
 
-        {/* Chat Area or Welcome */}
         {activeFriend ? (
           <ChatArea
             activeFriend={activeFriend}
@@ -155,7 +148,6 @@ export default function Dashboard() {
                 Select a conversation from the sidebar to start chatting, or find new friends to connect with.
               </p>
 
-              {/* Online Friends Strip */}
               {onlineFriends.length > 0 && (
                 <div className="mt-10 w-full max-w-md">
                   <p className="text-xs font-medium text-slate-400 uppercase tracking-wider mb-4">Friends Online Now</p>
@@ -184,7 +176,6 @@ export default function Dashboard() {
           </div>
         )}
 
-        {/* Right Panel – Online Friends & Suggestions */}
         <RightPanel
           onlineFriends={onlineFriends}
           groups={mockGroups}
@@ -194,11 +185,9 @@ export default function Dashboard() {
         />
       </main>
 
-      {/* Modals */}
       <FindFriendsModal isOpen={isFindFriendsOpen} onClose={() => setIsFindFriendsOpen(false)} />
       <NewGroupModal isOpen={isNewGroupOpen} onClose={() => setIsNewGroupOpen(false)} />
 
-      {/* Custom scrollbar styles */}
       <style>{`
         .custom-scrollbar::-webkit-scrollbar {
           width: 6px;

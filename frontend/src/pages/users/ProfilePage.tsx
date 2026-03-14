@@ -29,7 +29,6 @@ export default function ProfilePage() {
 
   return (
     <div className="min-h-screen bg-crypto-dark font-sans selection:bg-emerald-200 selection:text-emerald-900">
-      {/* Minimal Top Bar */}
       <header className="glass-header sticky top-0 z-50 px-6 py-3 flex items-center justify-between shadow-sm">
         <div className="flex items-center gap-2 group cursor-pointer" onClick={() => navigate("/dashboard")}>
           <div className="w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center border border-emerald-200 shadow-sm transition-transform group-hover:scale-105">
@@ -50,10 +49,8 @@ export default function ProfilePage() {
         </button>
       </header>
 
-      {/* Profile Content */}
       <main className="container mx-auto max-w-2xl px-4 py-12">
         <div className="glass-panel rounded-2xl overflow-hidden">
-          {/* Cover + Avatar */}
           <div className="h-32 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-500 relative">
             <div className="absolute -bottom-12 left-8">
               <div className="w-24 h-24 rounded-full bg-gradient-to-br from-emerald-500 to-teal-600 text-white flex items-center justify-center text-4xl font-bold ring-4 ring-white shadow-xl shadow-emerald-500/20">
@@ -62,7 +59,6 @@ export default function ProfilePage() {
             </div>
           </div>
 
-          {/* Info Section */}
           <div className="pt-16 pb-8 px-8">
             <h1 className="text-2xl font-serif font-semibold text-slate-800">{user.name}</h1>
             <p className="text-emerald-600 font-medium mt-1">Online</p>

@@ -44,7 +44,6 @@ export default function Sidebar({
       animate={{ opacity: 1, x: 0 }}
       className="w-full sm:w-80 md:w-[22rem] flex flex-col bg-white/70 backdrop-blur-md border border-white/50 shadow-lg shadow-emerald-500/5 rounded-2xl overflow-hidden shrink-0 hidden md:flex h-[calc(100vh-7rem)]"
     >
-      {/* Header */}
       <div className="p-4 pb-3 border-b border-emerald-100/80 bg-white/60">
         <div className="flex items-center justify-between mb-3 px-0.5">
           <h2 className="text-lg font-serif font-semibold text-slate-800">
@@ -68,7 +67,6 @@ export default function Sidebar({
           </div>
         </div>
 
-        {/* Search */}
         <div className="relative mb-3">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
           <input
@@ -80,7 +78,6 @@ export default function Sidebar({
           />
         </div>
 
-        {/* Tabs */}
         <div className="flex gap-1 bg-slate-100 rounded-lg p-0.5">
           <button
             onClick={() => setTab("chats")}
@@ -106,7 +103,6 @@ export default function Sidebar({
         </div>
       </div>
 
-      {/* Friends List */}
       <div className="flex-1 overflow-y-auto p-2 space-y-0.5 custom-scrollbar">
         {(tab === "online" ? onlineFriends : filteredFriends).map((friend) => (
           <button
@@ -160,7 +156,6 @@ export default function Sidebar({
           </div>
         )}
 
-        {/* Group Chats Section */}
         {tab === "chats" && groups.length > 0 && (
           <>
             <div className="px-3 pt-4 pb-1">
