@@ -61,7 +61,7 @@ app.include_router(users_router, prefix="/api")
 # routers
 @app.get("/")
 async def root():
-    return {"message": "Crypto Vault API is running!"}
+    return {"message": "Cozy Convo API is running!"}
 
 if __name__ == "__main__":
     import uvicorn

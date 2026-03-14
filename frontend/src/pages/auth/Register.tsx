@@ -121,30 +121,30 @@ export default function Register() {
   return (
     <div>
       <div className="text-center mb-8">
-        <h2 className="text-2xl font-bold text-white mb-2">
+        <h2 className="text-2xl font-bold text-slate-800 mb-2">
           Create an account
         </h2>
-        <p className="text-slate-400 text-sm">
-          Join the most secure crypto management platform
+        <p className="text-slate-600 text-sm">
+          Join Cozy Convo and start chatting
         </p>
       </div>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Name Field */}
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Full Name
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <User className="h-5 w-5 text-slate-500" />
+              <User className="h-5 w-5 text-slate-400" />
             </div>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
-              className="block w-full pl-10 pr-3 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all"
+              className="block w-full pl-10 pr-3 py-2.5 bg-white border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all shadow-sm"
               placeholder="John Doe"
             />
           </div>
@@ -152,19 +152,19 @@ export default function Register() {
 
         {/* Email Field */}
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Email Address
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Mail className="h-5 w-5 text-slate-500" />
+              <Mail className="h-5 w-5 text-slate-400" />
             </div>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
-              className="block w-full pl-10 pr-3 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all"
+              className="block w-full pl-10 pr-3 py-2.5 bg-white border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all shadow-sm"
               placeholder="you@domain.com"
             />
           </div>
@@ -172,25 +172,25 @@ export default function Register() {
 
         {/* Password Field */}
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Password
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Lock className="h-5 w-5 text-slate-500" />
+              <Lock className="h-5 w-5 text-slate-400" />
             </div>
             <input
               type={showPassword ? "text" : "password"}
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="block w-full pl-10 pr-10 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all"
+              className="block w-full pl-10 pr-10 py-2.5 bg-white border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all shadow-sm"
               placeholder="••••••••"
             />
             <button
               type="button"
               onClick={() => setShowPassword(!showPassword)}
-              className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-500 hover:text-slate-300 transition-colors"
+              className="absolute inset-y-0 right-0 pr-3 flex items-center text-slate-400 hover:text-slate-600 transition-colors"
             >
               {showPassword ? (
                 <EyeOff className="h-5 w-5" />
@@ -203,19 +203,19 @@ export default function Register() {
 
         {/* Confirm Password Field */}
         <div>
-          <label className="block text-sm font-medium text-slate-300 mb-1.5">
+          <label className="block text-sm font-medium text-slate-700 mb-1.5">
             Confirm Password
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Lock className="h-5 w-5 text-slate-500" />
+              <Lock className="h-5 w-5 text-slate-400" />
             </div>
             <input
               type={showPassword ? "text" : "password"}
               name="confirmPassword"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="block w-full pl-10 pr-3 py-2.5 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all"
+              className="block w-full pl-10 pr-3 py-2.5 bg-white border border-slate-200 rounded-lg text-slate-800 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-crypto-primary focus:border-transparent transition-all shadow-sm"
               placeholder="••••••••"
             />
           </div>
@@ -223,17 +223,17 @@ export default function Register() {
 
         {/* Password Strength Feedback */}
         {passwordFeedback && !passwordFeedback.is_strong && (
-          <div className="rounded-xl bg-red-500/10 border border-red-500/20 p-4 space-y-3 animate-in fade-in slide-in-from-top-2">
+          <div className="rounded-xl bg-red-50 border border-red-100 p-4 space-y-3 animate-in fade-in slide-in-from-top-2 shadow-sm">
             {/* Score Bar */}
             <div className="space-y-1.5">
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-2">
-                  <ShieldAlert className="w-4 h-4 text-red-400" />
-                  <span className="text-sm font-medium text-red-400">
+                  <ShieldAlert className="w-4 h-4 text-red-500" />
+                  <span className="text-sm font-medium text-red-600">
                     {passwordFeedback.message}
                   </span>
                 </div>
-                <span className="text-xs text-slate-400">
+                <span className="text-xs text-slate-500">
                   {getScoreLabel(passwordFeedback.score)}
                 </span>
               </div>
@@ -244,7 +244,7 @@ export default function Register() {
                     className={`h-1.5 flex-1 rounded-full transition-all duration-300 ${
                       i <= passwordFeedback.score
                         ? getScoreColor(passwordFeedback.score)
-                        : "bg-white/10"
+                        : "bg-slate-200"
                     }`}
                   />
                 ))}
@@ -253,9 +253,9 @@ export default function Register() {
 
             {/* Warning */}
             {passwordFeedback.warning && (
-              <div className="flex items-start gap-2.5 bg-amber-500/10 rounded-lg px-3 py-2.5">
-                <AlertTriangle className="w-4 h-4 text-amber-400 mt-0.5 shrink-0" />
-                <p className="text-sm text-amber-300">
+              <div className="flex items-start gap-2.5 bg-amber-50 rounded-lg px-3 py-2.5 border border-amber-100">
+                <AlertTriangle className="w-4 h-4 text-amber-500 mt-0.5 shrink-0" />
+                <p className="text-sm text-amber-700">
                   {passwordFeedback.warning}
                 </p>
               </div>
@@ -266,8 +266,8 @@ export default function Register() {
               passwordFeedback.suggestions.length > 0 && (
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
-                    <Lightbulb className="w-4 h-4 text-blue-400" />
-                    <span className="text-xs font-medium text-blue-400 uppercase tracking-wider">
+                    <Lightbulb className="w-4 h-4 text-blue-500" />
+                    <span className="text-xs font-medium text-blue-600 uppercase tracking-wider">
                       Suggestions
                     </span>
                   </div>
@@ -275,7 +275,7 @@ export default function Register() {
                     {passwordFeedback.suggestions.map((suggestion, i) => (
                       <li
                         key={i}
-                        className="text-sm text-slate-300 list-disc marker:text-blue-400/60"
+                        className="text-sm text-slate-600 list-disc marker:text-blue-400"
                       >
                         {suggestion}
                       </li>
@@ -289,12 +289,12 @@ export default function Register() {
         <button
           type="submit"
           disabled={isLoading}
-          className="w-full py-3 px-4 bg-crypto-primary hover:bg-blue-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center gap-2 mt-6 disabled:opacity-70 disabled:cursor-not-allowed"
+          className="w-full py-3 px-4 bg-crypto-primary hover:bg-emerald-600 text-white font-medium rounded-lg transition-all duration-300 flex items-center justify-center gap-2 mt-6 disabled:opacity-70 disabled:cursor-not-allowed shadow-md shadow-emerald-500/20"
         >
           {isLoading ? (
             <>
               <Loader2 className="w-5 h-5 animate-spin" />
-              Creating vault...
+              Creating account...
             </>
           ) : (
             "Create Account"
@@ -302,11 +302,11 @@ export default function Register() {
         </button>
       </form>
 
-      <p className="mt-6 text-center text-sm text-slate-400">
+      <p className="mt-6 text-center text-sm text-slate-600">
         Already have an account?{" "}
         <Link
           to="/auth/login"
-          className="text-crypto-primary hover:text-blue-400 font-medium transition-colors"
+          className="text-crypto-primary hover:text-emerald-600 font-medium transition-colors"
         >
           Sign in
         </Link>

@@ -4,6 +4,7 @@ import AuthLayout from './pages/auth/AuthLayout';
 import Login from './pages/auth/Login';
 import Register from './pages/auth/Register';
 import Dashboard from './pages/users/Dashboard';
+import ProfilePage from './pages/users/ProfilePage';
 import ProtectedRoute from './components/auth/ProtectedRoute';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {/* User */}
         <Route element={<ProtectedRoute />}>
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile" element={<ProfilePage />} />
         </Route>
 
         <Route path="*" element={<LandingPage />} />

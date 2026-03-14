@@ -1,10 +1,14 @@
-# Crypto Vault
+# Cozy Convo
 
-Welcome to Crypto Vault, a full-stack application for managing your cryptocurrency data.
+Welcome to Cozy Convo, a full-stack chat application for cozy, private conversations.
 
 ## 🚀 Overview
 
-Crypto Vault is built with a modern stack, combining a fast React frontend with a robust Python backend.
+Cozy Convo is built with a modern stack, combining a fast React frontend with a robust Python backend.
+
+<p align="center">
+  <img src="docs/image.png" width="100%" alt="Project Preview">
+</p>
 
 - **Frontend**: React + TypeScript + Vite
 - **Backend**: Python (FastAPI/CRUD architecture)
@@ -17,15 +21,18 @@ Crypto Vault is built with a modern stack, combining a fast React frontend with 
 ## 🛠️ Getting Started
 
 ### Prerequisites
+
 - Node.js (for the frontend)
 - Python 3.x (for the backend)
 
 ### Frontend Setup
+
 1. Navigate to the frontend directory: `cd frontend`
 2. Install dependencies (e.g., `npm install`)
 3. Run the development server (e.g., `npm run dev`)
 
 ### Backend Setup
+
 1. Navigate to the backend directory: `cd backend`
 2. Install requirements
 3. Start the application

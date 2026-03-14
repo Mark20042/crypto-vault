@@ -1,43 +1,44 @@
 @import "tailwindcss";
 
 @theme {
-  --color-crypto-dark: #0f172a;
-  --color-crypto-primary: #3b82f6;
-  --color-crypto-secondary: #8b5cf6;
-  --color-crypto-accent: #10b981;
-
+  --color-crypto-dark: #f0fdf4; /* Soft green-white matching light background */
+  --color-crypto-primary: #10b981; /* Emerald 500 */
+  --color-crypto-secondary: #059669; /* Emerald 600 */
+  --color-crypto-accent: #34d399; /* Emerald 400 */
+  
   --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", serif;
 }
 
 @layer base {
   body {
-    @apply bg-crypto-dark text-slate-200 font-sans antialiased overflow-x-hidden;
+    @apply bg-crypto-dark text-slate-800 font-sans antialiased overflow-x-hidden transition-colors duration-300;
   }
 }
 
 @layer utilities {
   .glass-panel {
-    @apply bg-white/5 backdrop-blur-md border border-white/10 shadow-xl;
+    @apply bg-white/70 backdrop-blur-md border border-white/50 shadow-lg shadow-emerald-500/5;
   }
 
   .glass-header {
-    @apply bg-crypto-dark/70 backdrop-blur-lg border-b border-white/10;
+    @apply bg-white/80 backdrop-blur-lg border-b border-emerald-100;
   }
 
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-crypto-primary via-crypto-secondary to-crypto-accent;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-crypto-primary via-emerald-400 to-teal-500;
   }
 }
 
 /* Custom Toast Styles */
 .crypto-toast {
-  background: rgba(15, 23, 42, 0.95) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
   border-radius: 12px !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4) !important;
-  color: #e2e8f0 !important;
-  font-family: "Inter", sans-serif !important;
+  box-shadow: 0 8px 32px rgba(16, 185, 129, 0.1) !important;
+  color: #0f172a !important;
+  font-family: var(--font-sans) !important;
 }
 
 .Toastify__toast--success .crypto-toast,
@@ -47,31 +48,31 @@
 
 .Toastify__toast--error .crypto-toast,
 .Toastify__toast--error.crypto-toast {
-  border-color: rgba(139, 92, 246, 0.5) !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
 }
 
 .Toastify__toast--warning .crypto-toast,
 .Toastify__toast--warning.crypto-toast {
-  border-color: rgba(251, 191, 36, 0.5) !important;
+  border-color: rgba(245, 158, 11, 0.5) !important;
 }
 
 .Toastify__toast--info .crypto-toast,
 .Toastify__toast--info.crypto-toast {
-  border-color: rgba(59, 130, 246, 0.5) !important;
+  border-color: rgba(16, 185, 129, 0.5) !important;
 }
 
 .crypto-toast-progress {
-  background: linear-gradient(to right, #3b82f6, #8b5cf6, #10b981) !important;
+  background: linear-gradient(to right, #10b981, #059669, #34d399) !important;
   height: 3px !important;
 }
 
 .Toastify__close-button {
-  color: #94a3b8 !important;
+  color: #64748b !important;
   opacity: 0.7 !important;
 }
 
 .Toastify__close-button:hover {
-  color: #fff !important;
+  color: #0f172a !important;
   opacity: 1 !important;
 }
 
@@ -81,13 +82,13 @@
 }
 
 .Toastify__toast--error svg {
-  fill: #8b5cf6 !important;
+  fill: #ef4444 !important;
 }
 
 .Toastify__toast--warning svg {
-  fill: #fbbf24 !important;
+  fill: #f59e0b !important;
 }
 
 .Toastify__toast--info svg {
-  fill: #3b82f6 !important;
+  fill: #10b981 !important;
 }
